@@ -14,6 +14,8 @@ namespace AdministradorDeArticulos
 {
     public partial class Form1 : Form
     {
+
+        private List<Articulo> listaArticulo;
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +23,22 @@ namespace AdministradorDeArticulos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
 
+        private void cargar()
+        {
+            ListaArticulo articulo = new ListaArticulo();
+            try
+            {
+                listaArticulo = articulo.listarArticulo();
+                dgvListaDeArticulos.DataSource = listaArticulo; 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

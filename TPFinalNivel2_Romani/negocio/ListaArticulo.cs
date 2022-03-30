@@ -16,7 +16,7 @@ namespace negocio
             
             try
             {
-                datos.setearConsulta("SELECT Codigo , Nombre , A.Descripcion , ImagenUrl , Precio From ARTICULOS A");
+                datos.setearConsulta("SELECT Codigo , Nombre , Descripcion , ImagenUrl , Precio From ARTICULOS ");
                 datos.ejecutarLectura();
 
 
@@ -26,9 +26,9 @@ namespace negocio
 
                     aux.CodigoArticulo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["A.Descripcion"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
-                    aux.Precio = (int)datos.Lector["Precio"];
+                    aux.Precio = datos.Lector.GetInt32(4);
 
                     lista.Add(aux);
 
