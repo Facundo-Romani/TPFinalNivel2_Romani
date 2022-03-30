@@ -14,12 +14,17 @@ namespace negocio
         private SqlCommand comando;
         private SqlDataReader lector;
 
+        public SqlDataReader Lector
+        {
+            get { return Lector; }
+        }
+
         public AccesoDatos()
         {
             conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
             comando = new SqlCommand();
         }
-        public void setearParametro(string consulta)
+        public void setearConsulta(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
