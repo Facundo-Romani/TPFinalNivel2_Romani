@@ -37,7 +37,20 @@ namespace AdministradorDeArticulos
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cargarImagen( string Imagen)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

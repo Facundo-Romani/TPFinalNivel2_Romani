@@ -51,7 +51,7 @@
             this.dgvListaDeArticulos.Name = "dgvListaDeArticulos";
             this.dgvListaDeArticulos.RowHeadersWidth = 62;
             this.dgvListaDeArticulos.RowTemplate.Height = 28;
-            this.dgvListaDeArticulos.Size = new System.Drawing.Size(635, 390);
+            this.dgvListaDeArticulos.Size = new System.Drawing.Size(738, 390);
             this.dgvListaDeArticulos.TabIndex = 0;
             // 
             // lblTítulo
@@ -92,7 +92,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(672, 427);
+            this.btnBuscar.Location = new System.Drawing.Point(765, 425);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(102, 32);
             this.btnBuscar.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(791, 430);
+            this.txtCodigo.Location = new System.Drawing.Point(884, 428);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(185, 26);
             this.txtCodigo.TabIndex = 6;
@@ -109,7 +109,7 @@
             // cbxCategoria
             // 
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(791, 326);
+            this.cbxCategoria.Location = new System.Drawing.Point(884, 324);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(185, 28);
             this.cbxCategoria.TabIndex = 7;
@@ -117,7 +117,7 @@
             // cbxMarca
             // 
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(791, 381);
+            this.cbxMarca.Location = new System.Drawing.Point(884, 379);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(185, 28);
             this.cbxMarca.TabIndex = 8;
@@ -125,7 +125,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(721, 384);
+            this.lblMarca.Location = new System.Drawing.Point(814, 382);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(53, 20);
             this.lblMarca.TabIndex = 9;
@@ -134,7 +134,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(696, 334);
+            this.lblCategoria.Location = new System.Drawing.Point(789, 332);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(78, 20);
             this.lblCategoria.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // pbxImagenArticulo
             // 
-            this.pbxImagenArticulo.Location = new System.Drawing.Point(725, 69);
+            this.pbxImagenArticulo.Location = new System.Drawing.Point(818, 69);
             this.pbxImagenArticulo.Name = "pbxImagenArticulo";
             this.pbxImagenArticulo.Size = new System.Drawing.Size(251, 212);
             this.pbxImagenArticulo.TabIndex = 11;
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1031, 607);
+            this.ClientSize = new System.Drawing.Size(1110, 607);
             this.Controls.Add(this.pbxImagenArticulo);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
