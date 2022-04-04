@@ -53,11 +53,12 @@
             this.dgvListaDeArticulos.RowTemplate.Height = 28;
             this.dgvListaDeArticulos.Size = new System.Drawing.Size(738, 390);
             this.dgvListaDeArticulos.TabIndex = 0;
+            this.dgvListaDeArticulos.SelectionChanged += new System.EventHandler(this.dgvListaDeArticulos_SelectionChanged);
             // 
             // lblTítulo
             // 
             this.lblTítulo.AutoSize = true;
-            this.lblTítulo.Location = new System.Drawing.Point(290, 35);
+            this.lblTítulo.Location = new System.Drawing.Point(330, 37);
             this.lblTítulo.Name = "lblTítulo";
             this.lblTítulo.Size = new System.Drawing.Size(101, 20);
             this.lblTítulo.TabIndex = 1;
@@ -65,16 +66,17 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(146, 480);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(199, 480);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnAgregarArticulo.TabIndex = 2;
             this.btnAgregarArticulo.Text = "Agregar";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
             // btnModificarArticulo
             // 
-            this.btnModificarArticulo.Location = new System.Drawing.Point(294, 480);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(334, 480);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnModificarArticulo.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             // btnEliminarArticulo
             // 
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(446, 480);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(479, 480);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnEliminarArticulo.TabIndex = 4;
@@ -145,6 +147,7 @@
             this.pbxImagenArticulo.Location = new System.Drawing.Point(818, 69);
             this.pbxImagenArticulo.Name = "pbxImagenArticulo";
             this.pbxImagenArticulo.Size = new System.Drawing.Size(251, 212);
+            this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenArticulo.TabIndex = 11;
             this.pbxImagenArticulo.TabStop = false;
             // 

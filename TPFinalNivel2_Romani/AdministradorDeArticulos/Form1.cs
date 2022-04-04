@@ -32,7 +32,9 @@ namespace AdministradorDeArticulos
             try
             {
                 listaArticulo = articulo.listarArticulo();
-                dgvListaDeArticulos.DataSource = listaArticulo; 
+                dgvListaDeArticulos.DataSource = listaArticulo;
+                ocultarColumnas();
+                cargarImagen(listaArticulo[0].UrlImagen);
             }
             catch (Exception ex)
             {
@@ -45,13 +47,29 @@ namespace AdministradorDeArticulos
         {
             try
             {
-
+                pbxImagenArticulo.Load(Imagen);
             }
             catch (Exception ex)
             {
-
-                throw;
+                pbxImagenArticulo.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
             }
+        }
+
+        private void dgvListaDeArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagen);
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvListaDeArticulos.Columns["UrlImagen"].Visible = false;
+        }
+
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            frmAgregarArticulo agregar = new frmAgregarArticulo();
+            agregar.ShowDialog();
         }
     }
 }
