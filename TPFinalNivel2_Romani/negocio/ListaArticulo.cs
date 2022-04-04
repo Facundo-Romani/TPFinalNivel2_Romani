@@ -24,7 +24,7 @@ namespace negocio
                 {
                     Articulo aux = new Articulo();
 
-                    aux.CodigoArticulo = (string)datos.Lector["Codigo"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     

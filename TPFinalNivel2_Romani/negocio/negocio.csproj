@@ -44,6 +44,8 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="AgregarModificarArt.cs" />
     <Compile Include="ListaArticulo.cs" />
+    <Compile Include="ListaCategoria.cs" />
+    <Compile Include="ListaMarca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

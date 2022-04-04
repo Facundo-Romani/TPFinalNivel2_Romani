@@ -102,7 +102,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(138, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 24);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Código";
             // 
@@ -111,7 +111,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(138, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 24);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre";
             // 
@@ -120,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(138, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 24);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "Descripción";
             // 
@@ -129,7 +129,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(138, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 24);
+            this.label4.Size = new System.Drawing.Size(87, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Url Imagen";
             // 
@@ -138,7 +138,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(138, 310);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 24);
+            this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Precio";
             // 
@@ -147,7 +147,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(138, 372);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 24);
+            this.label6.Size = new System.Drawing.Size(78, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Categoría";
             // 
@@ -156,7 +156,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(138, 430);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 24);
+            this.label7.Size = new System.Drawing.Size(53, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Marca";
             // 
@@ -172,7 +172,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(418, 518);
+            this.btnCancelar.Location = new System.Drawing.Point(468, 518);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 36);
             this.btnCancelar.TabIndex = 15;
@@ -185,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(728, 606);
+            this.ClientSize = new System.Drawing.Size(765, 615);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label7);
@@ -204,6 +204,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmAgregarArticulo";
             this.Text = "frmAgregarArticulo";
+            this.Load += new System.EventHandler(this.frmAgregarArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

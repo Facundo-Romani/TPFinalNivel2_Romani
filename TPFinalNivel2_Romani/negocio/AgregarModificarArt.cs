@@ -16,6 +16,10 @@ namespace negocio
 
             try
             {
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, Precio) values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "',@ImagenUrl , @IdMarca, @IdCategoria )");
+                datos.setearParametros("@ImagenUrl ", nuevo.UrlImagen);
+                datos.setearParametros("@IdMarca ", nuevo.Marca.Id);
+                datos.setearParametros("@IdCategoria ", nuevo.Categoria.Id);
                 datos.ejecurtarAccion();
             }
             catch (Exception ex)
