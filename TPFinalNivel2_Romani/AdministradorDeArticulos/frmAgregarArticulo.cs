@@ -30,6 +30,9 @@ namespace AdministradorDeArticulos
                 nuevoArt.Descripcion = txtDescripcion.Text;
                 nuevoArt.UrlImagen = txtUrlImagen.Text;
                 nuevoArt.Precio = int.Parse(txtPrecio.Text);
+                //Desplegables cbx.
+                nuevoArt.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                nuevoArt.Marca = (Marca)cbxCategoria.SelectedItem;
 
                 cargarArt.agregarArticulo(nuevoArt);
                 MessageBox.Show(" Articulo Agregado Exitosamente");
@@ -50,9 +53,18 @@ namespace AdministradorDeArticulos
         {   
             ListaCategoria categoria = new ListaCategoria();
             ListaMarca marca = new ListaMarca();
-   
-            cbxCategoria.Items.Add(categoria);
-            cbxMarca.Items.Add(marca);
+
+            try
+            {
+                cbxCategoria.DataSource = categoria.listarCategoria();
+                cbxMarca.DataSource = marca.listarMarca();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
             
         }
 

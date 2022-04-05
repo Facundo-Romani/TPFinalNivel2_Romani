@@ -16,6 +16,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("select Id , Descripcion from MARCAS");
+                datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {

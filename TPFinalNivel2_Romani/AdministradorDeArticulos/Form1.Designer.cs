@@ -58,7 +58,7 @@
             // lblTítulo
             // 
             this.lblTítulo.AutoSize = true;
-            this.lblTítulo.Location = new System.Drawing.Point(330, 37);
+            this.lblTítulo.Location = new System.Drawing.Point(17, 36);
             this.lblTítulo.Name = "lblTítulo";
             this.lblTítulo.Size = new System.Drawing.Size(101, 20);
             this.lblTítulo.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(199, 480);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(252, 475);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnAgregarArticulo.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             // btnModificarArticulo
             // 
-            this.btnModificarArticulo.Location = new System.Drawing.Point(334, 480);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(494, 475);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnModificarArticulo.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             // btnEliminarArticulo
             // 
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(479, 480);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(373, 475);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnEliminarArticulo.TabIndex = 4;
@@ -110,6 +110,7 @@
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Location = new System.Drawing.Point(884, 324);
             this.cbxCategoria.Name = "cbxCategoria";
@@ -118,6 +119,7 @@
             // 
             // cbxMarca
             // 
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
             this.cbxMarca.Location = new System.Drawing.Point(884, 379);
             this.cbxMarca.Name = "cbxMarca";
