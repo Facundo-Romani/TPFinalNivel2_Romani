@@ -38,7 +38,10 @@ namespace negocio
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     
+                    //Validar Null.
+                    if(!(datos.Lector["ImagenUrl"] is DBNull))
                     aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     lista.Add(aux);

@@ -70,6 +70,7 @@ namespace AdministradorDeArticulos
         {
             frmAgregarArticulo agregar = new frmAgregarArticulo();
             agregar.ShowDialog();
+            cargar();
         }
     }
 }

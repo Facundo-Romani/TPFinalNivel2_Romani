@@ -35,10 +35,6 @@
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.cbxMarca = new System.Windows.Forms.ComboBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
             this.pbxImagenArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
@@ -47,11 +43,14 @@
             // dgvListaDeArticulos
             // 
             this.dgvListaDeArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaDeArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaDeArticulos.Location = new System.Drawing.Point(21, 69);
+            this.dgvListaDeArticulos.MultiSelect = false;
             this.dgvListaDeArticulos.Name = "dgvListaDeArticulos";
             this.dgvListaDeArticulos.RowHeadersWidth = 62;
             this.dgvListaDeArticulos.RowTemplate.Height = 28;
-            this.dgvListaDeArticulos.Size = new System.Drawing.Size(738, 390);
+            this.dgvListaDeArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaDeArticulos.Size = new System.Drawing.Size(985, 390);
             this.dgvListaDeArticulos.TabIndex = 0;
             this.dgvListaDeArticulos.SelectionChanged += new System.EventHandler(this.dgvListaDeArticulos_SelectionChanged);
             // 
@@ -66,7 +65,7 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(252, 475);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(21, 475);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnAgregarArticulo.TabIndex = 2;
@@ -76,7 +75,7 @@
             // 
             // btnModificarArticulo
             // 
-            this.btnModificarArticulo.Location = new System.Drawing.Point(494, 475);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(258, 475);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnModificarArticulo.TabIndex = 3;
@@ -85,7 +84,7 @@
             // 
             // btnEliminarArticulo
             // 
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(373, 475);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(138, 475);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnEliminarArticulo.TabIndex = 4;
@@ -94,7 +93,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(765, 425);
+            this.btnBuscar.Location = new System.Drawing.Point(1027, 422);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(102, 32);
             this.btnBuscar.TabIndex = 5;
@@ -103,52 +102,16 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(884, 428);
+            this.txtCodigo.Location = new System.Drawing.Point(1151, 425);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(185, 26);
             this.txtCodigo.TabIndex = 6;
             // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(884, 324);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(185, 28);
-            this.cbxCategoria.TabIndex = 7;
-            // 
-            // cbxMarca
-            // 
-            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(884, 379);
-            this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(185, 28);
-            this.cbxMarca.TabIndex = 8;
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(814, 382);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(53, 20);
-            this.lblMarca.TabIndex = 9;
-            this.lblMarca.Text = "Marca";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(789, 332);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(78, 20);
-            this.lblCategoria.TabIndex = 10;
-            this.lblCategoria.Text = "Categoría";
-            // 
             // pbxImagenArticulo
             // 
-            this.pbxImagenArticulo.Location = new System.Drawing.Point(818, 69);
+            this.pbxImagenArticulo.Location = new System.Drawing.Point(1027, 69);
             this.pbxImagenArticulo.Name = "pbxImagenArticulo";
-            this.pbxImagenArticulo.Size = new System.Drawing.Size(251, 212);
+            this.pbxImagenArticulo.Size = new System.Drawing.Size(309, 240);
             this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenArticulo.TabIndex = 11;
             this.pbxImagenArticulo.TabStop = false;
@@ -158,12 +121,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1110, 607);
+            this.ClientSize = new System.Drawing.Size(1400, 607);
             this.Controls.Add(this.pbxImagenArticulo);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.cbxMarca);
-            this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminarArticulo);
@@ -173,6 +132,7 @@
             this.Controls.Add(this.dgvListaDeArticulos);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeArticulos)).EndInit();
@@ -191,10 +151,6 @@
         private System.Windows.Forms.Button btnEliminarArticulo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.ComboBox cbxCategoria;
-        private System.Windows.Forms.ComboBox cbxMarca;
-        private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.PictureBox pbxImagenArticulo;
     }
 }
