@@ -115,6 +115,7 @@
             this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenArticulo.TabIndex = 11;
             this.pbxImagenArticulo.TabStop = false;
+            
             // 
             // Form1
             // 

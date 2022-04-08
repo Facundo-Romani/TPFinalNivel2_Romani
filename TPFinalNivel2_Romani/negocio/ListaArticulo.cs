@@ -16,7 +16,7 @@ namespace negocio
             
             try
             {
-                datos.setearConsulta("SELECT Codigo , Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, ImagenUrl , Precio  From ARTICULOS A , MARCAS M , CATEGORIAS C where IdMarca = M.Id and IdCategoria = C.Id");
+                datos.setearConsulta("SELECT A.Codigo , A.Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, A.ImagenUrl , A.Precio  From ARTICULOS A , MARCAS M , CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
 
@@ -24,6 +24,7 @@ namespace negocio
                 {
                     Articulo aux = new Articulo();
 
+                    
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -40,7 +41,7 @@ namespace negocio
                     
                     //Validar Null.
                     if(!(datos.Lector["ImagenUrl"] is DBNull))
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     
                     aux.Precio = (decimal)datos.Lector["Precio"];
 

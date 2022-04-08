@@ -16,10 +16,15 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, Precio) values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "',@ImagenUrl , @IdMarca, @IdCategoria )");
-                datos.setearParametros("@ImagenUrl ", nuevo.UrlImagen);
+                datos.setearConsulta("Insert into ARTICULOS ( Codigo, Nombre, Descripcion, Precio, ImagenUrl, IdMarca, IdCategoria ) values ( @Codigo, @Nombre, @Descripcion, @Precio , @ImagenUrl ,@IdMarca, @IdCategoria )");
+                datos.setearParametros("@Codigo ", nuevo.Codigo);
+                datos.setearParametros("@Nombre ", nuevo.Nombre);
+                datos.setearParametros("@Descripcion ", nuevo.Descripcion);
+                datos.setearParametros("@Precio", nuevo.Precio);
+                datos.setearParametros("@ImagenUrl ", nuevo.ImagenUrl);
                 datos.setearParametros("@IdMarca ", nuevo.Marca.Id);
                 datos.setearParametros("@IdCategoria ", nuevo.Categoria.Id);
+               
                 datos.ejecurtarAccion();
             }
             catch (Exception ex)
@@ -33,7 +38,7 @@ namespace negocio
             }
         }
 
-        public void modificarArticulo(Articulo articulo)
+        public void modificarArticulo(Articulo modificar)
         {
 
         }

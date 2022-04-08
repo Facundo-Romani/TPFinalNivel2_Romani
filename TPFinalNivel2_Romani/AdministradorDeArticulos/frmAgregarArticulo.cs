@@ -23,17 +23,18 @@ namespace AdministradorDeArticulos
         {
             Articulo nuevoArt = new Articulo();
             AgregarModificarArt cargarArt = new AgregarModificarArt();
+            
             try
             {
                 nuevoArt.Codigo = txtCodigo.Text;
                 nuevoArt.Nombre = txtNombre.Text;
                 nuevoArt.Descripcion = txtDescripcion.Text;
-                nuevoArt.UrlImagen = txtUrlImagen.Text;
-                nuevoArt.Precio = int.Parse(txtPrecio.Text);
+                nuevoArt.ImagenUrl = txtUrlImagen.Text;
+                nuevoArt.Precio = decimal.Parse(txtPrecio.Text);
                 //Desplegables cbx.
+                nuevoArt.Marca = (Marca)cbxMarca.SelectedItem;
                 nuevoArt.Categoria = (Categoria)cbxCategoria.SelectedItem;
-                nuevoArt.Marca = (Marca)cbxCategoria.SelectedItem;
-
+               
                 cargarArt.agregarArticulo(nuevoArt);
                 MessageBox.Show(" Articulo Agregado Exitosamente");
             }
@@ -68,6 +69,22 @@ namespace AdministradorDeArticulos
             
         }
 
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
+
+        private void cargarImagen(string Imagen)
+        {
+            try
+            {
+                pbxAgregar.Load(Imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxAgregar.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
+            }
+        }
         //private void frmAgregarArticulo_Load(object sender, EventArgs e)
         //{
 

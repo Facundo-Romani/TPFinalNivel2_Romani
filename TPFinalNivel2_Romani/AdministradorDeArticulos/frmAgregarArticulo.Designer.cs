@@ -79,6 +79,7 @@
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(158, 26);
             this.txtUrlImagen.TabIndex = 3;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // txtPrecio
             // 
@@ -92,7 +93,7 @@
             // 
             this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(115, 370);
+            this.cbxCategoria.Location = new System.Drawing.Point(115, 427);
             this.cbxCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(158, 28);
@@ -102,7 +103,7 @@
             // 
             this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(115, 428);
+            this.cbxMarca.Location = new System.Drawing.Point(115, 375);
             this.cbxMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(158, 28);
@@ -156,7 +157,7 @@
             // lblCbxCategoria
             // 
             this.lblCbxCategoria.AutoSize = true;
-            this.lblCbxCategoria.Location = new System.Drawing.Point(12, 375);
+            this.lblCbxCategoria.Location = new System.Drawing.Point(18, 435);
             this.lblCbxCategoria.Name = "lblCbxCategoria";
             this.lblCbxCategoria.Size = new System.Drawing.Size(78, 20);
             this.lblCbxCategoria.TabIndex = 12;
@@ -165,7 +166,7 @@
             // lblCbxMarca
             // 
             this.lblCbxMarca.AutoSize = true;
-            this.lblCbxMarca.Location = new System.Drawing.Point(12, 432);
+            this.lblCbxMarca.Location = new System.Drawing.Point(18, 378);
             this.lblCbxMarca.Name = "lblCbxMarca";
             this.lblCbxMarca.Size = new System.Drawing.Size(53, 20);
             this.lblCbxMarca.TabIndex = 13;
@@ -177,7 +178,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(124, 36);
-            this.btnAgregar.TabIndex = 14;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -188,7 +189,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 36);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -198,7 +199,7 @@
             this.pbxAgregar.Location = new System.Drawing.Point(360, 92);
             this.pbxAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxAgregar.Name = "pbxAgregar";
-            this.pbxAgregar.Size = new System.Drawing.Size(264, 266);
+            this.pbxAgregar.Size = new System.Drawing.Size(275, 266);
             this.pbxAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAgregar.TabIndex = 16;
             this.pbxAgregar.TabStop = false;

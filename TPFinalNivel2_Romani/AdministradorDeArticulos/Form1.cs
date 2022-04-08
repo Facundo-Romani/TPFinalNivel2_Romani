@@ -34,7 +34,7 @@ namespace AdministradorDeArticulos
                 listaArticulo = articulo.listarArticulo();
                 dgvListaDeArticulos.DataSource = listaArticulo;
                 ocultarColumnas();
-                cargarImagen(listaArticulo[0].UrlImagen);
+                cargarImagen(listaArticulo[0].ImagenUrl);
             }
             catch (Exception ex)
             {
@@ -58,12 +58,12 @@ namespace AdministradorDeArticulos
         private void dgvListaDeArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
+            cargarImagen(seleccionado.ImagenUrl);
         }
 
         private void ocultarColumnas()
         {
-            dgvListaDeArticulos.Columns["UrlImagen"].Visible = false;
+            dgvListaDeArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
@@ -72,5 +72,7 @@ namespace AdministradorDeArticulos
             agregar.ShowDialog();
             cargar();
         }
+
+     
     }
 }
