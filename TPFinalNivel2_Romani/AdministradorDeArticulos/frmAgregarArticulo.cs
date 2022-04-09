@@ -14,10 +14,19 @@ namespace AdministradorDeArticulos
 {
     public partial class frmAgregarArticulo : Form
     {
+
+        private Articulo articulo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
         }
+
+        public frmAgregarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -60,6 +69,16 @@ namespace AdministradorDeArticulos
                 cbxCategoria.DataSource = categoria.listarCategoria();
                 cbxMarca.DataSource = marca.listarMarca();
 
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtUrlImagen.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+                    txtPrecio.Text = articulo.Precio.ToString();
+
+                }
             }
             catch (Exception ex)
             {
@@ -85,9 +104,5 @@ namespace AdministradorDeArticulos
                 pbxAgregar.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
             }
         }
-        //private void frmAgregarArticulo_Load(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }

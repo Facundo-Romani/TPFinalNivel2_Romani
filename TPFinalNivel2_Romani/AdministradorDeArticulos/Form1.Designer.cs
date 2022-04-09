@@ -75,16 +75,17 @@
             // 
             // btnModificarArticulo
             // 
-            this.btnModificarArticulo.Location = new System.Drawing.Point(258, 475);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(129, 475);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnModificarArticulo.TabIndex = 3;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
+            this.btnModificarArticulo.Click += new System.EventHandler(this.btnModificarArticulo_Click);
             // 
             // btnEliminarArticulo
             // 
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(138, 475);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(237, 475);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(102, 32);
             this.btnEliminarArticulo.TabIndex = 4;
@@ -115,7 +116,6 @@
             this.pbxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenArticulo.TabIndex = 11;
             this.pbxImagenArticulo.TabStop = false;
-            
             // 
             // Form1
             // 

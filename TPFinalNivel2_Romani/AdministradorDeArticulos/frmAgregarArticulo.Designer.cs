@@ -66,7 +66,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(115, 208);
+            this.txtDescripcion.Location = new System.Drawing.Point(115, 205);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(158, 26);
@@ -103,7 +103,7 @@
             // 
             this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(115, 375);
+            this.cbxMarca.Location = new System.Drawing.Point(115, 370);
             this.cbxMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(158, 28);

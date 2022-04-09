@@ -9,7 +9,6 @@ namespace negocio
 {
     public class AgregarModificarArt
     {
-
         public void agregarArticulo(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -40,7 +39,17 @@ namespace negocio
 
         public void modificarArticulo(Articulo modificar)
         {
+            AccesoDatos actualizar  = new AccesoDatos();
+            try
+            {
+                actualizar.setearConsulta("");
+                actualizar.ejecurtarAccion();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
         }
     }
 }

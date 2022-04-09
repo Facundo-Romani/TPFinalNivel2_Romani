@@ -73,6 +73,14 @@ namespace AdministradorDeArticulos
             cargar();
         }
 
-     
+        private void btnModificarArticulo_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
+
+            frmAgregarArticulo modificar = new frmAgregarArticulo(seleccionado);
+            modificar.ShowDialog();
+            cargar();
+        }
     }
 }
