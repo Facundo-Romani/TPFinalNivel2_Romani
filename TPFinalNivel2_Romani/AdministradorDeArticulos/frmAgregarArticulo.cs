@@ -14,38 +14,52 @@ namespace AdministradorDeArticulos
 {
     public partial class frmAgregarArticulo : Form
     {
-
+        
         private Articulo articulo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
+            Text = "Nuevo Artículo";
         }
 
         public frmAgregarArticulo(Articulo articulo)
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Modificar Artículo";
         }
 
-
+        // Este botón corresponde al Aceptar.
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo nuevoArt = new Articulo();
             AgregarModificarArt cargarArt = new AgregarModificarArt();
             
             try
             {
-                nuevoArt.Codigo = txtCodigo.Text;
-                nuevoArt.Nombre = txtNombre.Text;
-                nuevoArt.Descripcion = txtDescripcion.Text;
-                nuevoArt.ImagenUrl = txtUrlImagen.Text;
-                nuevoArt.Precio = decimal.Parse(txtPrecio.Text);
+                if (articulo == null) 
+                    articulo = new Articulo();
+
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.ImagenUrl = txtUrlImagen.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
                 //Desplegables cbx.
-                nuevoArt.Marca = (Marca)cbxMarca.SelectedItem;
-                nuevoArt.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                
-                cargarArt.agregarArticulo(nuevoArt);
-                MessageBox.Show(" Articulo Agregado Exitosamente");
+                if (articulo.Id != 0)
+                {
+                    cargarArt.modificarArticulo(articulo);
+                    MessageBox.Show(" Modificado Exitosamente ");
+                }
+                else
+                {
+                    cargarArt.agregarArticulo(articulo);
+                    MessageBox.Show(" Articulo Agregado Exitosamente ");
+                }  
+                
+                Close();
             }
             catch (Exception ex)
             {
@@ -68,6 +82,13 @@ namespace AdministradorDeArticulos
             {
                 cbxCategoria.DataSource = categoria.listarCategoria();
                 cbxMarca.DataSource = marca.listarMarca();
+                //Despplegable manejo de clave valor.
+                cbxMarca.DataSource = marca.listarMarca();
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Descripcion";
+                cbxCategoria.DataSource = categoria.listarCategoria();
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
 
                 if (articulo != null)
                 {
@@ -77,7 +98,9 @@ namespace AdministradorDeArticulos
                     txtUrlImagen.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
                     txtPrecio.Text = articulo.Precio.ToString();
-
+                    //Selección de desplegables para el modificar.
+                    cbxMarca.SelectedValue = articulo.Marca.Id;
+                    cbxCategoria.SelectedValue = articulo.Categoria.Id;
                 }
             }
             catch (Exception ex)

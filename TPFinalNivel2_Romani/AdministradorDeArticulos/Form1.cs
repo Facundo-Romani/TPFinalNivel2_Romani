@@ -63,6 +63,7 @@ namespace AdministradorDeArticulos
 
         private void ocultarColumnas()
         {
+            dgvListaDeArticulos.Columns["Id"].Visible = false;
             dgvListaDeArticulos.Columns["ImagenUrl"].Visible = false;
         }
 

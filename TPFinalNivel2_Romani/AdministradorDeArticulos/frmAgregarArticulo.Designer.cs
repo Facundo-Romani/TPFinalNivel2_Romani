@@ -42,7 +42,7 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCbxCategoria = new System.Windows.Forms.Label();
             this.lblCbxMarca = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pbxAgregar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAgregar)).BeginInit();
@@ -172,16 +172,16 @@
             this.lblCbxMarca.TabIndex = 13;
             this.lblCbxMarca.Text = "Marca";
             // 
-            // btnAgregar
+            // btnAceptar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(360, 422);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(124, 36);
-            this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAceptar.Location = new System.Drawing.Point(360, 422);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(124, 36);
+            this.btnAceptar.TabIndex = 7;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -212,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(746, 555);
             this.Controls.Add(this.pbxAgregar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblCbxMarca);
             this.Controls.Add(this.lblCbxCategoria);
             this.Controls.Add(this.lblPrecio);
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCbxCategoria;
         private System.Windows.Forms.Label lblCbxMarca;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pbxAgregar;
     }
