@@ -33,9 +33,10 @@
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.txtFiltroRapido = new System.Windows.Forms.TextBox();
             this.pbxImagenArticulo = new System.Windows.Forms.PictureBox();
+            this.lblFiltrar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDeArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
             this.SuspendLayout();
@@ -93,21 +94,22 @@
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
             this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
-            // btnBuscar
+            // btnFiltrar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(1027, 422);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(102, 32);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(1234, 430);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(102, 32);
+            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.Text = "Buscar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // txtCodigo
+            // txtFiltroRapido
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(1151, 425);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(185, 26);
-            this.txtCodigo.TabIndex = 6;
+            this.txtFiltroRapido.Location = new System.Drawing.Point(1027, 433);
+            this.txtFiltroRapido.Name = "txtFiltroRapido";
+            this.txtFiltroRapido.Size = new System.Drawing.Size(185, 26);
+            this.txtFiltroRapido.TabIndex = 6;
             // 
             // pbxImagenArticulo
             // 
@@ -118,15 +120,25 @@
             this.pbxImagenArticulo.TabIndex = 11;
             this.pbxImagenArticulo.TabStop = false;
             // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Location = new System.Drawing.Point(1023, 410);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(114, 20);
+            this.lblFiltrar.TabIndex = 12;
+            this.lblFiltrar.Text = "Filtrar Artículos";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1400, 607);
+            this.Controls.Add(this.lblFiltrar);
             this.Controls.Add(this.pbxImagenArticulo);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtFiltroRapido);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnEliminarArticulo);
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
@@ -151,9 +163,10 @@
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Button btnModificarArticulo;
         private System.Windows.Forms.Button btnEliminarArticulo;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.TextBox txtFiltroRapido;
         private System.Windows.Forms.PictureBox pbxImagenArticulo;
+        private System.Windows.Forms.Label lblFiltrar;
     }
 }
 

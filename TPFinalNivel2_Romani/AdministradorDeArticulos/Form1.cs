@@ -57,8 +57,11 @@ namespace AdministradorDeArticulos
 
         private void dgvListaDeArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.ImagenUrl);
+            if (dgvListaDeArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }        
         }
 
         private void ocultarColumnas()
@@ -103,6 +106,26 @@ namespace AdministradorDeArticulos
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        // BTN Buscar(Filtro Rápido por Nombre y Categoría)
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltroRapido.Text;
+
+            if(filtro != "")
+            {
+                listaFiltrada = listaArticulo.FindAll(Articulo => Articulo.Nombre.ToUpper().Contains(filtro.ToUpper()) || Articulo.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulo;
+            }
+
+            dgvListaDeArticulos.DataSource = null;
+            dgvListaDeArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
