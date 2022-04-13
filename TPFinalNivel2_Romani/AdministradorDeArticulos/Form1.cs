@@ -83,5 +83,26 @@ namespace AdministradorDeArticulos
             modificar.ShowDialog();
             cargar();
         }
+
+        // Eliminar físico el artículo.
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            AgregarModificarArt eliminar = new AgregarModificarArt();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿De verdad querés eliminar este Artículo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
+                    eliminar.eliminar(seleccionado.Id);
+                    cargar();
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
