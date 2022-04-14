@@ -24,6 +24,9 @@ namespace AdministradorDeArticulos
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoría");
         }
 
         private void cargar()
@@ -108,13 +111,13 @@ namespace AdministradorDeArticulos
             }
         }
 
-        // BTN Buscar(Filtro Rápido por Nombre y Categoría)
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        // Evento para ajustes del filtro rápido.
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
             string filtro = txtFiltroRapido.Text;
 
-            if(filtro != "")
+            if (filtro.Length >= 3)
             {
                 listaFiltrada = listaArticulo.FindAll(Articulo => Articulo.Nombre.ToUpper().Contains(filtro.ToUpper()) || Articulo.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -126,6 +129,42 @@ namespace AdministradorDeArticulos
             dgvListaDeArticulos.DataSource = null;
             dgvListaDeArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Número")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private void btnFiltrarAvanzado_Click(object sender, EventArgs e)
+        {
+            FiltrarArt filtroArt = new FiltrarArt();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvListaDeArticulos.DataSource = filtroArt.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

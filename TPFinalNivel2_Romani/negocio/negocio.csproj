@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="AgregarModificarArt.cs" />
+    <Compile Include="FiltrarArt.cs" />
     <Compile Include="ListaArticulo.cs" />
     <Compile Include="ListaCategoria.cs" />
     <Compile Include="ListaMarca.cs" />
