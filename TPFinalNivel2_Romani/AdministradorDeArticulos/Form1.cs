@@ -134,12 +134,16 @@ namespace AdministradorDeArticulos
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opcion = cboCampo.SelectedItem.ToString();
-            if (opcion == "Número")
+
+            if (opcion == "Código")
             {
                 cboCriterio.Items.Clear();
                 cboCriterio.Items.Add("Mayor a");
                 cboCriterio.Items.Add("Menor a");
                 cboCriterio.Items.Add("Igual a");
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
             }
             else
             {

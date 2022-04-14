@@ -21,25 +21,25 @@ namespace negocio
                 {
                     switch (criterio)
                     {       
-                            // Por criterio de números.
-                        case "Mayor a":
-                            consulta += " A.Codigo > " + filtro;
-                            break;
-                        case "Menor a":
-                            consulta += " A.Codigo < " + filtro;
-                            break;
-                        case "Igual a":
-                            consulta += " A.Codigo = " + filtro;
-                            break;
-                            // Por criterio de letras.
+                         // Por criterio de letras.
                         case "Comienza con":
                             consulta += " A.Codigo like '" + filtro + "%' ";
                             break;
                         case "Termina con":
                             consulta += " A.Codigo like '%" + filtro + "'";
                             break;
-                        default:
+                        case "Igual a":
                             consulta += " A.Codigo like '%" + filtro + "%'";
+                            break;
+                        // Por criterio de números.
+                        case "Mayor a":
+                            consulta += " A.Codigo > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += "A.Codigo < " + filtro;
+                            break;
+                        default:
+                            consulta += "A.Codigo = " + filtro;
                             break;
                     }
                 }
@@ -48,13 +48,13 @@ namespace negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "M.Descripcion like '" + filtro + "%' ";
+                            consulta += "Marca like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "M.Descripcion like '%" + filtro + "'";
+                            consulta += "Marca like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "M.Descripcion like '%" + filtro + "%'";
+                            consulta += "Marca like '%" + filtro + "%'";
                             break;
                     }
                 }
@@ -63,13 +63,13 @@ namespace negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "C.Descripcion like '" + filtro + "%' ";
+                            consulta += "Categoria like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "C.Descripcion like '%" + filtro + "'";
+                            consulta += "Categoria like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "C.Descripcion like '%" + filtro + "%'";
+                            consulta += "Categoria like '%" + filtro + "%'";
                             break;
                     }
                 }
