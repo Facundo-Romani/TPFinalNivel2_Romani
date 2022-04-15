@@ -64,7 +64,7 @@
             // lblTítulo
             // 
             this.lblTítulo.AutoSize = true;
-            this.lblTítulo.Location = new System.Drawing.Point(22, 46);
+            this.lblTítulo.Location = new System.Drawing.Point(22, 36);
             this.lblTítulo.Name = "lblTítulo";
             this.lblTítulo.Size = new System.Drawing.Size(101, 20);
             this.lblTítulo.TabIndex = 1;
@@ -112,7 +112,7 @@
             // 
             // txtFiltroRapido
             // 
-            this.txtFiltroRapido.Location = new System.Drawing.Point(697, 40);
+            this.txtFiltroRapido.Location = new System.Drawing.Point(697, 30);
             this.txtFiltroRapido.Name = "txtFiltroRapido";
             this.txtFiltroRapido.Size = new System.Drawing.Size(309, 26);
             this.txtFiltroRapido.TabIndex = 6;
@@ -130,7 +130,7 @@
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
-            this.lblFiltrar.Location = new System.Drawing.Point(490, 43);
+            this.lblFiltrar.Location = new System.Drawing.Point(490, 36);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(201, 20);
             this.lblFiltrar.TabIndex = 12;

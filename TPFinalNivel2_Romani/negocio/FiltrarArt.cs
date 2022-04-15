@@ -15,13 +15,12 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT A.Id , A.Codigo , A.Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, A.ImagenUrl , A.Precio  From ARTICULOS A , MARCAS M , CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id";
+                string consulta = "SELECT A.Id , A.Codigo , A.Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, A.ImagenUrl , A.Precio  From ARTICULOS A , MARCAS M , CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id And";
 
                 if (campo == "Código")
                 {
                     switch (criterio)
-                    {       
-                         // Por criterio de letras.
+                    {
                         case "Comienza con":
                             consulta += " A.Codigo like '" + filtro + "%' ";
                             break;
@@ -31,16 +30,6 @@ namespace negocio
                         case "Igual a":
                             consulta += " A.Codigo like '%" + filtro + "%'";
                             break;
-                        // Por criterio de números.
-                        case "Mayor a":
-                            consulta += " A.Codigo > " + filtro;
-                            break;
-                        case "Menor a":
-                            consulta += "A.Codigo < " + filtro;
-                            break;
-                        default:
-                            consulta += "A.Codigo = " + filtro;
-                            break;
                     }
                 }
                 else if (campo == "Marca")
@@ -48,31 +37,32 @@ namespace negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "Marca like '" + filtro + "%' ";
+                            consulta += " M.Descripcion like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "Marca like '%" + filtro + "'";
+                            consulta += " M.Descripcion like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "Marca like '%" + filtro + "%'";
+                            consulta += " M.Descripcion like '%" + filtro + "%'";
                             break;
                     }
                 }
-                else if (campo == "Categoría")
+                else
                 {
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "Categoria like '" + filtro + "%' ";
+                            consulta += " C.Descripcion like '" + filtro + "%' ";
                             break;
                         case "Termina con":
-                            consulta += "Categoria like '%" + filtro + "'";
+                            consulta += " C.Descripcion like '%" + filtro + "'";
                             break;
                         default:
-                            consulta += "Categoria like '%" + filtro + "%'";
+                            consulta += " C.Descripcion like '%" + filtro + "%'";
                             break;
                     }
                 }
+
                 datos.setearConsulta(consulta);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())

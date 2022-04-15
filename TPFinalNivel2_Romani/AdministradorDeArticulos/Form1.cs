@@ -133,37 +133,23 @@ namespace AdministradorDeArticulos
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string opcion = cboCampo.SelectedItem.ToString();
-
-            if (opcion == "Código")
-            {
-                cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Mayor a");
-                cboCriterio.Items.Add("Menor a");
-                cboCriterio.Items.Add("Igual a");
-                cboCriterio.Items.Add("Comienza con");
-                cboCriterio.Items.Add("Termina con");
-                cboCriterio.Items.Add("Contiene");
-            }
-            else
-            {
-                cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Comienza con");
-                cboCriterio.Items.Add("Termina con");
-                cboCriterio.Items.Add("Contiene");
-            }
+            cboCampo.SelectedItem.ToString();
+            cboCriterio.Items.Clear();
+            cboCriterio.Items.Add("Comienza con");
+            cboCriterio.Items.Add("Termina con");
+            cboCriterio.Items.Add("Contiene");
         }
 
         private void btnFiltrarAvanzado_Click(object sender, EventArgs e)
         {
             FiltrarArt filtroArt = new FiltrarArt();
+
             try
             {
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
                 dgvListaDeArticulos.DataSource = filtroArt.filtrar(campo, criterio, filtro);
-
             }
             catch (Exception ex)
             {
