@@ -9,6 +9,7 @@ namespace negocio
 {
     public class FiltrarArt
     {
+        // Filtro Avanzado
         public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             List <Articulo> lista = new List<Articulo>();
