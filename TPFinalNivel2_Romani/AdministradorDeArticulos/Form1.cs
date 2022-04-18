@@ -27,6 +27,7 @@ namespace AdministradorDeArticulos
             cboCampo.Items.Add("Código");
             cboCampo.Items.Add("Marca");
             cboCampo.Items.Add("Categoría");
+            cboCampo.Items.Add("Precio");
         }
 
         private void cargar()
@@ -133,11 +134,22 @@ namespace AdministradorDeArticulos
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboCampo.SelectedItem.ToString();
-            cboCriterio.Items.Clear();
-            cboCriterio.Items.Add("Comienza con");
-            cboCriterio.Items.Add("Termina con");
-            cboCriterio.Items.Add("Contiene");
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            if (opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
         }
 
         private void btnFiltrarAvanzado_Click(object sender, EventArgs e)

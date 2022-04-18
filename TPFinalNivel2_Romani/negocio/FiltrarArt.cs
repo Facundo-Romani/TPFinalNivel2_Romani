@@ -16,7 +16,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT A.Id , A.Codigo , A.Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, A.ImagenUrl , A.Precio  From ARTICULOS A , MARCAS M , CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id And";
+                string consulta = "SELECT A.Id , A.Codigo , A.Nombre , A.Descripcion , IdMarca , M.Descripcion Marca, IdCategoria ,C.Descripcion Categoria, A.ImagenUrl , A.Precio Precio From ARTICULOS A , MARCAS M , CATEGORIAS C where A.IdMarca = M.Id and A.IdCategoria = C.Id And";
 
                 if (campo == "Código")
                 {
@@ -48,7 +48,7 @@ namespace negocio
                             break;
                     }
                 }
-                else
+                else if (campo == "Categoria")
                 {
                     switch (criterio)
                     {
@@ -60,6 +60,21 @@ namespace negocio
                             break;
                         default:
                             consulta += " C.Descripcion like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += " A.Precio > " + filtro;
+                            break;
+                        case "Menor a":
+                            consulta += " A.Precio < " + filtro;
+                            break;
+                        default:
+                            consulta += " A.Precio = " + filtro;
                             break;
                     }
                 }
