@@ -48,18 +48,6 @@ namespace AdministradorDeArticulos
             }
         }
 
-        private void cargarImagen( string Imagen)
-        {
-            try
-            {
-                pbxImagenArticulo.Load(Imagen);
-            }
-            catch (Exception ex)
-            {
-                pbxImagenArticulo.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
-            }
-        }
-
         private void dgvListaDeArticulos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvListaDeArticulos.CurrentRow != null)
@@ -118,6 +106,9 @@ namespace AdministradorDeArticulos
         {
             List<Articulo> listaFiltrada;
             string filtro = txtFiltroRapido.Text;
+
+            if (validarFiltroRapido())
+                return;
 
             if (filtro.Length >= 3)
             {
@@ -215,7 +206,29 @@ namespace AdministradorDeArticulos
             return true;
         }
 
-        // Validar Solo letras.
+        // Validar filtro Rápido.
+        private bool validarFiltroRapido()
+        {
+            if ((soloNumeros(txtFiltroRapido.Text)))
+            {
+                MessageBox.Show("Ingresar solo letras, para filtrar por Nombre de Artículo.");
+                return true;
+            }
+            return false;
+        }
+        
+        // Cargar Imagen.
+        private void cargarImagen(string Imagen)
+        {
+            try
+            {
+                pbxImagenArticulo.Load(Imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxImagenArticulo.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
+            }
+        }
 
     }
 }
