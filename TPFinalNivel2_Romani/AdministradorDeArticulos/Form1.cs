@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using dominio;
 using negocio;
 
+
 namespace AdministradorDeArticulos
 {
     public partial class Form1 : Form
@@ -158,6 +159,9 @@ namespace AdministradorDeArticulos
 
             try
             {
+                if (validarFiltro())
+                     return;
+
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
@@ -168,5 +172,50 @@ namespace AdministradorDeArticulos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        // Validación filtro Avanzado.
+        private bool validarFiltro()
+        {
+            if (cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                return true;
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio para filtrar.");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Debes cargar el filtro para Precio");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Ingresar solo números, para filtrar por un campo Precio.");
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
+        // Validar que solo ingrese número en txtFiltroAvanzado.
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
+        // Validar Solo letras.
+
     }
 }

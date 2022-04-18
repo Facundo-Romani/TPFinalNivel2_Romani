@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.IO;
+using System.Configuration;
+
 
 namespace AdministradorDeArticulos
 {
@@ -16,6 +19,7 @@ namespace AdministradorDeArticulos
     {
         
         private Articulo articulo = null;
+        private OpenFileDialog archivo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
@@ -44,7 +48,7 @@ namespace AdministradorDeArticulos
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.ImagenUrl = txtUrlImagen.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
-                //Desplegables cbx.
+                // Desplegables cbx.
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                
@@ -57,8 +61,11 @@ namespace AdministradorDeArticulos
                 {
                     cargarArt.agregarArticulo(articulo);
                     MessageBox.Show(" Articulo Agregado Exitosamente ");
-                }  
-                
+                }
+                // Guardo imagen si la levantó localmente:
+                if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["ImgCatalogo"] + archivo.SafeFileName);
+
                 Close();
             }
             catch (Exception ex)
@@ -125,6 +132,18 @@ namespace AdministradorDeArticulos
             catch (Exception ex)
             {
                 pbxAgregar.Load("https://w7.pngwing.com/pngs/848/297/png-transparent-white-graphy-color-empty-banner-blue-angle-white.png");
+            }
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png"; 
+
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
             }
         }
     }

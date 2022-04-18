@@ -102,7 +102,7 @@
             // 
             // btnFiltrarAvanzado
             // 
-            this.btnFiltrarAvanzado.Location = new System.Drawing.Point(1234, 475);
+            this.btnFiltrarAvanzado.Location = new System.Drawing.Point(1245, 475);
             this.btnFiltrarAvanzado.Name = "btnFiltrarAvanzado";
             this.btnFiltrarAvanzado.Size = new System.Drawing.Size(102, 32);
             this.btnFiltrarAvanzado.TabIndex = 5;

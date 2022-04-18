@@ -45,6 +45,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pbxAgregar = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAgregar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,12 +205,23 @@
             this.pbxAgregar.TabIndex = 16;
             this.pbxAgregar.TabStop = false;
             // 
+            // btnAgregarImg
+            // 
+            this.btnAgregarImg.Location = new System.Drawing.Point(288, 255);
+            this.btnAgregarImg.Name = "btnAgregarImg";
+            this.btnAgregarImg.Size = new System.Drawing.Size(47, 33);
+            this.btnAgregarImg.TabIndex = 17;
+            this.btnAgregarImg.Text = "+";
+            this.btnAgregarImg.UseVisualStyleBackColor = true;
+            this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(746, 555);
+            this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.pbxAgregar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pbxAgregar;
+        private System.Windows.Forms.Button btnAgregarImg;
     }
 }
