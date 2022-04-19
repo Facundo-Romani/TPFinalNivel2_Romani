@@ -20,6 +20,7 @@ namespace AdministradorDeArticulos
         public Form1()
         {
             InitializeComponent();
+            Text = "GESTOR DE ARTÍCULOS";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -230,5 +231,14 @@ namespace AdministradorDeArticulos
             }
         }
 
+        private void btnDetalleArticulo_Click(object sender, EventArgs e)
+        {
+            Articulo detalleArt;
+            detalleArt = (Articulo)dgvListaDeArticulos.CurrentRow.DataBoundItem;
+
+            FrmDetallesDelArticulo detallesArticulo = new FrmDetallesDelArticulo(detalleArt);
+            detallesArticulo.ShowDialog();
+            cargar();
+        }
     }
 }

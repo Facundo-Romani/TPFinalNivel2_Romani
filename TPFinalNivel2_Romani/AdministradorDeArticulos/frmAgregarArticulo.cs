@@ -46,6 +46,7 @@ namespace AdministradorDeArticulos
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
+                
                 articulo.ImagenUrl = txtUrlImagen.Text;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
                 // Desplegables cbx.
@@ -62,6 +63,7 @@ namespace AdministradorDeArticulos
                     cargarArt.agregarArticulo(articulo);
                     MessageBox.Show(" Articulo Agregado Exitosamente ");
                 }
+
                 // Guardo imagen si la levantó localmente:
                 if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")))
                     File.Copy(archivo.FileName, ConfigurationManager.AppSettings["ImgCatalogo"] + archivo.SafeFileName);
@@ -146,5 +148,36 @@ namespace AdministradorDeArticulos
                 cargarImagen(archivo.FileName);
             }
         }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            validarTxtPrecio();
+        }
+
+        private bool validarTxtPrecio()
+        {   
+          if (articulo == null) 
+            { 
+                if (!(soloNumeros(txtPrecio.Text)))
+                {
+                   MessageBox.Show("Este campo solo acepta valores numéricos");
+                   return true;
+                }
+            }
+            return false;
+        }    
+
+        // Validar solo que ingrese solo números en txtPrecio.
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
+        
     }
 }
